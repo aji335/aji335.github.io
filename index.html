@@ -8,7 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Google Fonts: Outfit & Plus Jakarta Sans -->
+    <!-- Google Fonts: Plus Jakarta Sans & Outfit -->
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <script>
@@ -20,19 +20,23 @@
                         display: ['Outfit', 'sans-serif'],
                     },
                     colors: {
-                        navy: {
-                            950: '#070E1B',
-                            900: '#0E1726',
-                            800: '#182538',
-                            700: '#263750',
-                            600: '#3A506E',
+                        magenta: {
+                            950: '#2b0712',
+                            900: '#3d0818',
+                            800: '#590d22',
+                            700: '#800f2f',
+                            600: '#a71e3c',
+                            500: '#c92a42',
+                            400: '#e63956',
                         },
-                        softwhite: {
-                            50: '#FFFFFF',
-                            100: '#F8FAFC',
-                            200: '#F1F5F9',
-                            300: '#E2E8F0',
-                            400: '#CBD5E1',
+                        cream: {
+                            50: '#ffffff',
+                            100: '#fffbf5',
+                            200: '#fff0f5',
+                            300: '#ffecd1',
+                            400: '#fdf0d5',
+                            500: '#f4d58d',
+                            600: '#e0c075',
                         }
                     }
                 }
@@ -41,69 +45,70 @@
     </script>
 
     <style>
-        .glass-navy {
-            background: rgba(14, 23, 38, 0.88);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(248, 250, 252, 0.1);
+        .glass-magenta {
+            background: rgba(43, 7, 18, 0.88);
+            backdrop-filter: blur(14px);
+            border: 1px solid rgba(253, 240, 213, 0.15);
         }
         .glass-card {
-            background: rgba(24, 37, 56, 0.7);
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(248, 250, 252, 0.08);
+            background: rgba(89, 13, 34, 0.55);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(253, 240, 213, 0.12);
         }
-        .bg-navy-gradient {
-            background: radial-gradient(circle at top right, rgba(56, 189, 248, 0.12), transparent 45%),
-                        radial-gradient(circle at bottom left, rgba(129, 140, 248, 0.08), transparent 45%);
+        .bg-magenta-gradient {
+            background: radial-gradient(circle at top right, rgba(230, 57, 86, 0.2), transparent 45%),
+                        radial-gradient(circle at bottom left, rgba(128, 15, 47, 0.35), transparent 50%);
         }
+        /* Page View Switching Transitions */
         .page-view {
-            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+            transition: opacity 0.35s ease-in-out, transform 0.35s ease-in-out;
         }
         .page-hidden {
             display: none !important;
             opacity: 0;
-            transform: translateY(15px);
+            transform: translateY(16px);
         }
     </style>
 </head>
-<body class="bg-navy-950 text-softwhite-200 font-sans antialiased selection:bg-softwhite-50 selection:text-navy-950 bg-navy-gradient min-h-screen flex flex-col justify-between">
+<body class="bg-magenta-950 text-cream-300 font-sans antialiased selection:bg-cream-300 selection:text-magenta-950 bg-magenta-gradient min-h-screen flex flex-col justify-between">
 
     <!-- Header & Navigasi Utama -->
-    <header class="sticky top-0 z-40 glass-navy border-b border-navy-800">
+    <header class="sticky top-0 z-40 glass-magenta border-b border-magenta-800/80">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <a href="javascript:void(0)" onclick="navigateTo('home')" class="flex items-center gap-3 group">
-                <div class="w-10 h-10 rounded-xl bg-softwhite-50 flex items-center justify-center font-display font-extrabold text-navy-950 text-xl shadow-lg shadow-softwhite-50/10 group-hover:bg-softwhite-200 transition-colors">
+                <div class="w-10 h-10 rounded-xl bg-cream-300 flex items-center justify-center font-display font-extrabold text-magenta-950 text-xl shadow-lg shadow-cream-300/20 group-hover:bg-cream-400 transition-colors">
                     AP
                 </div>
                 <div>
-                    <span class="font-display font-bold text-lg text-softwhite-50 block leading-none tracking-wide">Aji Prastiawan</span>
-                    <span class="text-xs text-softwhite-300 font-medium tracking-wide">Kelas XII DKV</span>
+                    <span class="font-display font-bold text-lg text-cream-100 block leading-none tracking-wide">Aji Prastiawan</span>
+                    <span class="text-xs text-cream-400 font-medium tracking-wide">Desainer - XII DKV</span>
                 </div>
             </a>
 
-            <!-- Navigation Links -->
+            <!-- Menu Desktop Navigasi -->
             <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
-                <button onclick="navigateTo('home')" id="nav-home" class="text-softwhite-50 font-semibold border-b-2 border-softwhite-50 py-1 transition-all">Beranda</button>
-                <button onclick="navigateTo('works')" id="nav-works" class="text-softwhite-300 hover:text-softwhite-50 py-1 transition-all">Karya Saya</button>
-                <a href="#tentang" onclick="if(currentView!=='home') navigateTo('home')" class="text-softwhite-300 hover:text-softwhite-50 transition-colors">Profil</a>
+                <button onclick="navigateTo('home')" id="nav-home" class="text-cream-100 font-semibold border-b-2 border-cream-300 py-1 transition-all">Beranda</button>
+                <button onclick="navigateTo('works')" id="nav-works" class="text-cream-400 hover:text-cream-100 py-1 transition-all">Karya Saya</button>
+                <a href="#profil-detail" onclick="if(currentView!=='home') navigateTo('home')" class="text-cream-400 hover:text-cream-100 transition-colors">Profil Desainer</a>
                 
                 <!-- Tombol Karya Saya -->
-                <button onclick="navigateTo('works')" class="px-6 py-2.5 rounded-full bg-softwhite-50 text-navy-950 font-bold hover:bg-softwhite-200 shadow-md shadow-softwhite-50/10 transition-all flex items-center gap-2 transform hover:scale-105">
-                    <i class="fa-solid fa-layer-group text-xs"></i> Karya Saya
+                <button onclick="navigateTo('works')" class="px-6 py-2.5 rounded-full bg-cream-300 hover:bg-cream-400 text-magenta-950 font-extrabold shadow-md shadow-cream-300/15 transition-all flex items-center gap-2 transform hover:-translate-y-0.5">
+                    <i class="fa-solid fa-palette text-xs"></i> Karya Saya
                 </button>
             </nav>
 
-            <!-- Mobile Menu Button -->
-            <button id="mobile-menu-btn" class="md:hidden text-softwhite-50 hover:text-softwhite-300 focus:outline-none p-2">
+            <!-- Tombol Mobile Menu -->
+            <button id="mobile-menu-btn" class="md:hidden text-cream-200 hover:text-cream-400 focus:outline-none p-2" aria-label="Menu Mobile">
                 <i class="fa-solid fa-bars text-xl"></i>
             </button>
         </div>
 
-        <!-- Mobile Menu Dropdown -->
-        <div id="mobile-menu" class="hidden md:hidden glass-navy border-b border-navy-800 px-6 py-4 space-y-3">
-            <button onclick="navigateTo('home'); toggleMobileMenu();" class="block w-full text-left py-2 text-softwhite-50 font-semibold">Beranda</button>
-            <button onclick="navigateTo('works'); toggleMobileMenu();" class="block w-full text-left py-2 text-softwhite-300 hover:text-softwhite-50">Karya Saya</button>
-            <button onclick="navigateTo('works'); toggleMobileMenu();" class="inline-block mt-2 px-5 py-2.5 rounded-full bg-softwhite-50 text-navy-950 font-bold text-sm">
-                Lihat Karya Saya
+        <!-- Menu Mobile Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden glass-magenta border-b border-magenta-800 px-6 py-4 space-y-3">
+            <button onclick="navigateTo('home'); toggleMobileMenu();" class="block w-full text-left py-2 text-cream-100 font-semibold">Beranda</button>
+            <button onclick="navigateTo('works'); toggleMobileMenu();" class="block w-full text-left py-2 text-cream-400 hover:text-cream-100">Karya Saya</button>
+            <button onclick="navigateTo('works'); toggleMobileMenu();" class="inline-block mt-2 px-5 py-2.5 rounded-full bg-cream-300 text-magenta-950 font-bold text-sm">
+                Lihat Semua Karya Saya
             </button>
         </div>
     </header>
@@ -114,123 +119,146 @@
         <section id="view-home" class="page-view py-12 lg:py-20">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
-                <!-- Hero Section -->
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-20">
+                <!-- Hero Section & Profil Foto Desainer -->
+                <div id="profil-detail" class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-20">
+                    
+                    <!-- Informasi Teks Profil -->
                     <div class="lg:col-span-7 space-y-6">
-                        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-navy-800 border border-navy-700 text-xs font-semibold text-softwhite-200">
-                            <span class="w-2 h-2 rounded-full bg-softwhite-50 animate-pulse"></span>
-                            Portofolio Siswa Desain Komunikasi Visual
+                        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-magenta-900 border border-magenta-700 text-xs font-semibold text-cream-300">
+                            <span class="w-2.5 h-2.5 rounded-full bg-cream-300 animate-pulse"></span>
+                            Desainer Komunikasi Visual
                         </div>
 
-                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold text-softwhite-50 leading-tight">
-                            Eksplorasi Karya Desain <br>
-                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-softwhite-50 via-softwhite-300 to-softwhite-100">
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold text-cream-100 leading-tight">
+                            Portofolio Karya <br>
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-cream-100 via-cream-300 to-cream-500">
                                 Aji Prastiawan
                             </span>
                         </h1>
 
-                        <p class="text-base sm:text-lg text-softwhite-300 leading-relaxed">
-                            Saya adalah siswa <strong class="text-softwhite-50">Kelas XII DKV</strong>. Selamat datang di galeri portofolio pribadi saya yang memuat berbagai pengerjaan sketsa gambar, sketsa font, logo dengan makna filosofis, poster, dan komposisi nirmana.
+                        <p class="text-base sm:text-lg text-cream-300/90 leading-relaxed">
+                            Halo! Saya <strong class="text-cream-100">Aji Prastiawan</strong>, siswa <strong class="text-cream-100">Kelas XII DKV (Desain Komunikasi Visual)</strong>. Saya berfokus merancang identitas logo bermakna, sketsa gambar keychain, karya ekspresi nirmana, poster visual interaktif, hingga sketsa anatomi font.
                         </p>
 
-                        <!-- Tombol Utama Pengarah ke Karya Saya -->
+                        <!-- Poin Informasi Penting -->
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2 text-xs">
+                            <div class="glass-card p-3.5 rounded-xl border border-magenta-800">
+                                <span class="text-cream-400 block mb-0.5">Nama Desainer:</span>
+                                <strong class="text-cream-100 text-sm">Aji Prastiawan</strong>
+                            </div>
+                            <div class="glass-card p-3.5 rounded-xl border border-magenta-800">
+                                <span class="text-cream-400 block mb-0.5">Kelas & Jurusan:</span>
+                                <strong class="text-cream-100 text-sm">XII DKV</strong>
+                            </div>
+                            <div class="glass-card p-3.5 rounded-xl border border-magenta-800 col-span-2 sm:col-span-1">
+                                <span class="text-cream-400 block mb-0.5">Bidang Spesialis:</span>
+                                <strong class="text-cream-100 text-sm">Visual & Branding</strong>
+                            </div>
+                        </div>
+
+                        <!-- Tombol Utama "Karya Saya" -->
                         <div class="flex flex-wrap gap-4 pt-4">
-                            <button onclick="navigateTo('works')" class="px-8 py-4 rounded-full bg-softwhite-50 hover:bg-softwhite-200 text-navy-950 font-extrabold text-base transition-all shadow-xl shadow-softwhite-50/10 flex items-center gap-3 transform hover:-translate-y-1">
-                                <i class="fa-solid fa-palette text-navy-950"></i> KARYA SAYA 
+                            <button onclick="navigateTo('works')" class="px-8 py-4 rounded-full bg-cream-300 hover:bg-cream-400 text-magenta-950 font-extrabold text-base transition-all shadow-xl shadow-cream-300/20 flex items-center gap-3 transform hover:-translate-y-1">
+                                <i class="fa-solid fa-layer-group text-magenta-950"></i> KARYA SAYA 
                                 <i class="fa-solid fa-arrow-right text-sm"></i>
                             </button>
-                            <a href="#tentang" class="px-8 py-4 rounded-full glass-card hover:bg-navy-800 text-softwhite-50 font-semibold text-base border border-navy-700 transition-all flex items-center gap-2">
-                                Profil Lengkap
+                            <a href="#kategori-list" class="px-7 py-4 rounded-full glass-card hover:bg-magenta-900 text-cream-200 font-semibold text-base border border-magenta-700 transition-all flex items-center gap-2">
+                                Ringkasan Karya
                             </a>
                         </div>
                     </div>
 
-                    <!-- Kartu Profil Visual -->
+                    <!-- Foto Desainer Profile Card -->
                     <div class="lg:col-span-5">
                         <div class="relative max-w-md mx-auto">
-                            <div class="absolute -inset-1 bg-gradient-to-r from-softwhite-50 to-navy-600 rounded-3xl blur-lg opacity-20"></div>
-                            <div class="relative glass-card border border-navy-700 rounded-3xl p-8 text-center space-y-6">
-                                <div class="w-28 h-28 mx-auto rounded-full p-1 bg-softwhite-50 flex items-center justify-center shadow-lg">
-                                    <div class="w-full h-full rounded-full bg-navy-900 flex items-center justify-center text-3xl font-display font-extrabold text-softwhite-50">
-                                        <i class="fa-solid fa-user-pen"></i>
-                                    </div>
+                            <!-- Glow Efek Magenta -->
+                            <div class="absolute -inset-1.5 bg-gradient-to-r from-cream-300 via-magenta-600 to-cream-500 rounded-3xl blur-xl opacity-35"></div>
+                            
+                            <div class="relative glass-card border border-magenta-700 rounded-3xl p-6 sm:p-8 text-center space-y-6">
+                                <!-- Foto Desainer -->
+                                <div class="relative w-44 h-44 sm:w-48 sm:h-48 mx-auto rounded-2xl p-1 bg-gradient-to-tr from-cream-300 to-cream-500 shadow-2xl overflow-hidden">
+                                    <img src="https://simangu.smksalirsyad-hgl.sch.id/apimangu/uploads/siswa/242510008/1787795460_bf355acf.jpg" 
+                                         alt="" 
+                                         class="w-full h-full object-cover rounded-xl"
+                                         onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&q=80'">
                                 </div>
 
                                 <div>
-                                    <h2 class="text-2xl font-display font-bold text-softwhite-50">Aji Prastiawan</h2>
-                                    <p class="text-softwhite-300 text-sm font-medium mt-1">Siswa Kelas XII DKV</p>
-                                    <p class="text-softwhite-400 text-xs mt-3 leading-relaxed">
-                                        "Setiap garis, wujud, dan warna memiliki pesan serta makna mendalam yang ingin disampaikan."
+                                    <div class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-magenta-900 text-cream-300 border border-magenta-700 mb-2">
+                                        Foto Desainer
+                                    </div>
+                                    <h2 class="text-2xl font-display font-bold text-cream-100">Aji Prastiawan</h2>
+                                    <p class="text-cream-300 text-sm font-medium mt-0.5">Siswa Kelas XII DKV</p>
+                                    <p class="text-cream-400 text-xs mt-3 leading-relaxed">
+                                        "Mewujudkan konsep ide visual secara estetik, fungsional, serta memiliki pesan filosofis yang kuat."
                                     </p>
                                 </div>
 
-                                <div class="pt-4 border-t border-navy-800/80 grid grid-cols-2 gap-3 text-left text-xs">
-                                    <div class="bg-navy-900 p-3 rounded-xl border border-navy-800">
-                                        <span class="text-softwhite-400 block">Jurusan:</span>
-                                        <strong class="text-softwhite-50">DKV</strong>
-                                    </div>
-                                    <div class="bg-navy-900 p-3 rounded-xl border border-navy-800">
-                                        <span class="text-softwhite-400 block">Kelas:</span>
-                                        <strong class="text-softwhite-50">XII DKV</strong>
-                                    </div>
+                                <div class="pt-4 border-t border-magenta-800 flex justify-center gap-4 text-cream-300">
+                                    <span class="px-3 py-1.5 rounded-lg bg-magenta-900 text-xs font-medium border border-magenta-800 text-cream-300">
+                                        <i class="fa-solid fa-check-circle text-cream-400 mr-1"></i> Terverifikasi Siswa DKV
+                                    </span>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
 
-                <!-- Preview Kategori Karya -->
-                <div id="tentang" class="py-12 border-t border-navy-800">
-                    <div class="text-center max-w-2xl mx-auto mb-12">
-                        <h2 class="text-2xl sm:text-3xl font-display font-bold text-softwhite-50">Kategori Portofolio Desain</h2>
-                        <p class="text-softwhite-300 text-sm mt-2">Klik tombol karya di bawah untuk berpindah ke halaman detail karya:</p>
+                <!-- Ringkasan Kategori Karya -->
+                <div id="kategori-list" class="py-12 border-t border-magenta-800/80">
+                    <div class="text-center max-w-2xl mx-auto mb-10">
+                        <span class="text-cream-400 text-xs font-bold uppercase tracking-widest">Eksplorasi Desain</span>
+                        <h2 class="text-2xl sm:text-3xl font-display font-bold text-cream-100 mt-1">Galeri Kategori Karya</h2>
+                        <p class="text-cream-300 text-sm mt-2">Klik tombol "Karya Saya" atau pilih kategori di bawah untuk melihat karya lengkap dan penjelasannya:</p>
                     </div>
 
                     <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-                        <div onclick="navigateTo('works', 'sketsa-gambar')" class="glass-card p-5 rounded-2xl border border-navy-700 hover:border-softwhite-50/50 cursor-pointer text-center transition-all group">
-                            <div class="w-12 h-12 rounded-xl bg-navy-800 text-softwhite-50 flex items-center justify-center text-xl mx-auto mb-3 group-hover:scale-110 transition-transform">
+                        <div onclick="navigateTo('works', 'sketsa-gambar')" class="glass-card p-5 rounded-2xl border border-magenta-700 hover:border-cream-300/50 cursor-pointer text-center transition-all group">
+                            <div class="w-12 h-12 rounded-xl bg-magenta-900 text-cream-300 flex items-center justify-center text-xl mx-auto mb-3 group-hover:scale-110 transition-transform">
                                 <i class="fa-solid fa-key"></i>
                             </div>
-                            <h3 class="font-bold text-softwhite-50 text-sm">Sketsa Gambar</h3>
-                            <p class="text-[11px] text-softwhite-400 mt-1">Keychain Design</p>
+                            <h3 class="font-bold text-cream-100 text-sm">Sketsa Gambar</h3>
+                            <p class="text-[11px] text-cream-400 mt-1">Sketsa Keychain</p>
                         </div>
 
-                        <div onclick="navigateTo('works', 'sketsa-font')" class="glass-card p-5 rounded-2xl border border-navy-700 hover:border-softwhite-50/50 cursor-pointer text-center transition-all group">
-                            <div class="w-12 h-12 rounded-xl bg-navy-800 text-softwhite-50 flex items-center justify-center text-xl mx-auto mb-3 group-hover:scale-110 transition-transform">
+                        <div onclick="navigateTo('works', 'sketsa-font')" class="glass-card p-5 rounded-2xl border border-magenta-700 hover:border-cream-300/50 cursor-pointer text-center transition-all group">
+                            <div class="w-12 h-12 rounded-xl bg-magenta-900 text-cream-300 flex items-center justify-center text-xl mx-auto mb-3 group-hover:scale-110 transition-transform">
                                 <i class="fa-solid fa-font"></i>
                             </div>
-                            <h3 class="font-bold text-softwhite-50 text-sm">Sketsa Font</h3>
-                            <p class="text-[11px] text-softwhite-400 mt-1">Anatomi Typo</p>
+                            <h3 class="font-bold text-cream-100 text-sm">Sketsa Font</h3>
+                            <p class="text-[11px] text-cream-400 mt-1">Eksplorasi Huruf</p>
                         </div>
 
-                        <div onclick="navigateTo('works', 'logo')" class="glass-card p-5 rounded-2xl border border-navy-700 hover:border-softwhite-50/50 cursor-pointer text-center transition-all group">
-                            <div class="w-12 h-12 rounded-xl bg-navy-800 text-softwhite-50 flex items-center justify-center text-xl mx-auto mb-3 group-hover:scale-110 transition-transform">
+                        <div onclick="navigateTo('works', 'logo')" class="glass-card p-5 rounded-2xl border border-magenta-700 hover:border-cream-300/50 cursor-pointer text-center transition-all group">
+                            <div class="w-12 h-12 rounded-xl bg-magenta-900 text-cream-300 flex items-center justify-center text-xl mx-auto mb-3 group-hover:scale-110 transition-transform">
                                 <i class="fa-solid fa-sun"></i>
                             </div>
-                            <h3 class="font-bold text-softwhite-50 text-sm">Logo</h3>
-                            <p class="text-[11px] text-softwhite-400 mt-1">Simbol Matahari</p>
+                            <h3 class="font-bold text-cream-100 text-sm">Logo</h3>
+                            <p class="text-[11px] text-cream-400 mt-1">Logo Matahari</p>
                         </div>
 
-                        <div onclick="navigateTo('works', 'poster')" class="glass-card p-5 rounded-2xl border border-navy-700 hover:border-softwhite-50/50 cursor-pointer text-center transition-all group">
-                            <div class="w-12 h-12 rounded-xl bg-navy-800 text-softwhite-50 flex items-center justify-center text-xl mx-auto mb-3 group-hover:scale-110 transition-transform">
+                        <div onclick="navigateTo('works', 'poster')" class="glass-card p-5 rounded-2xl border border-magenta-700 hover:border-cream-300/50 cursor-pointer text-center transition-all group">
+                            <div class="w-12 h-12 rounded-xl bg-magenta-900 text-cream-300 flex items-center justify-center text-xl mx-auto mb-3 group-hover:scale-110 transition-transform">
                                 <i class="fa-solid fa-scroll"></i>
                             </div>
-                            <h3 class="font-bold text-softwhite-50 text-sm">Poster</h3>
-                            <p class="text-[11px] text-softwhite-400 mt-1">Poster DKV</p>
+                            <h3 class="font-bold text-cream-100 text-sm">Poster</h3>
+                            <p class="text-[11px] text-cream-400 mt-1">Poster DKV</p>
                         </div>
 
-                        <div onclick="navigateTo('works', 'nirmana')" class="glass-card p-5 rounded-2xl border border-navy-700 hover:border-softwhite-50/50 cursor-pointer text-center transition-all group col-span-2 sm:col-span-1">
-                            <div class="w-12 h-12 rounded-xl bg-navy-800 text-softwhite-50 flex items-center justify-center text-xl mx-auto mb-3 group-hover:scale-110 transition-transform">
+                        <div onclick="navigateTo('works', 'nirmana')" class="glass-card p-5 rounded-2xl border border-magenta-700 hover:border-cream-300/50 cursor-pointer text-center transition-all group col-span-2 sm:col-span-1">
+                            <div class="w-12 h-12 rounded-xl bg-magenta-900 text-cream-300 flex items-center justify-center text-xl mx-auto mb-3 group-hover:scale-110 transition-transform">
                                 <i class="fa-solid fa-cubes"></i>
                             </div>
-                            <h3 class="font-bold text-softwhite-50 text-sm">Nirmana</h3>
-                            <p class="text-[11px] text-softwhite-400 mt-1">Harmoni Visual</p>
+                            <h3 class="font-bold text-cream-100 text-sm">Nirmana</h3>
+                            <p class="text-[11px] text-cream-400 mt-1">Harmoni Rupa</p>
                         </div>
                     </div>
 
+                    <!-- Tombol Pengarah Utama ke Karya -->
                     <div class="mt-12 text-center">
-                        <button onclick="navigateTo('works')" class="px-8 py-3.5 rounded-full bg-softwhite-50 hover:bg-softwhite-200 text-navy-950 font-bold transition-all shadow-lg inline-flex items-center gap-3">
-                            <i class="fa-solid fa-arrow-right-to-bracket"></i> Masuk Ke Halaman Karya Saya
+                        <button onclick="navigateTo('works')" class="px-9 py-4 rounded-full bg-cream-300 hover:bg-cream-400 text-magenta-950 font-extrabold text-base transition-all shadow-lg inline-flex items-center gap-3 transform hover:-translate-y-1">
+                            <i class="fa-solid fa-palette"></i> LIHAT HALAMAN KARYA SAYA <i class="fa-solid fa-arrow-right"></i>
                         </button>
                     </div>
                 </div>
@@ -238,64 +266,37 @@
             </div>
         </section>
 
-
-        <!-- ================= HALAMAN 2: HALAMAN KARYA SAYA / WORKS VIEW ================= -->
+        <!-- ================= HALAMAN 2: KARYA SAYA / WORKS VIEW ================= -->
         <section id="view-works" class="page-view page-hidden py-12 lg:py-16">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
-                <!-- Navigasi Kembali & Header Galeri -->
-                <div class="flex flex-col md:flex-row md:items-center justify-between mb-8 pb-6 border-b border-navy-800 gap-4">
+                <!-- Navigasi Kembali & Header Halaman Karya -->
+                <div class="flex flex-col md:flex-row md:items-center justify-between mb-8 pb-6 border-b border-magenta-800/80 gap-4">
                     <div>
-                        <button onclick="navigateTo('home')" class="text-xs font-semibold text-softwhite-300 hover:text-softwhite-50 flex items-center gap-2 mb-3 transition-colors">
+                        <button onclick="navigateTo('home')" class="text-xs font-semibold text-cream-300 hover:text-cream-100 flex items-center gap-2 mb-3 transition-colors">
                             <i class="fa-solid fa-arrow-left"></i> Kembali ke Beranda
                         </button>
-                        <h1 class="text-3xl sm:text-4xl font-display font-extrabold text-softwhite-50">
-                            Karya Saya
+                        <h1 class="text-3xl sm:text-4xl font-display font-extrabold text-cream-100">
+                            Galeri Karya Saya
                         </h1>
-                        <p class="text-softwhite-300 text-sm mt-1">
-                            Klik nama atau gambar karya untuk melihat penjelasan makna dan filosofi detailnya.
+                        <p class="text-cream-300 text-sm mt-1">
+                            Klik pada nama/kartu karya untuk membaca penjelasan detail dan makna filosofis di balik setiap karya oleh Aji Prastiawan.
                         </p>
                     </div>
 
                     <!-- Filter Kategori Karya -->
                     <div class="flex flex-wrap gap-2" id="filter-buttons">
-                        <button onclick="filterGallery('semua')" class="filter-btn active px-4 py-2 rounded-xl text-xs font-bold bg-softwhite-50 text-navy-950 transition-all">
+                        <button onclick="filterGallery('semua')" class="filter-btn active px-4 py-2 rounded-xl text-xs font-extrabold bg-cream-300 text-magenta-950 transition-all">
                             Semua Karya
                         </button>
-                        <button onclick="filterGallery('sketsa-gambar')" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-navy-800 text-softwhite-300 hover:text-softwhite-50 transition-all">
+                        <button onclick="filterGallery('sketsa-gambar')" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-magenta-900 text-cream-300 hover:text-cream-100 transition-all">
                             Sketsa Gambar
                         </button>
-                        <button onclick="filterGallery('sketsa-font')" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-navy-800 text-softwhite-300 hover:text-softwhite-50 transition-all">
+                        <button onclick="filterGallery('sketsa-font')" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-magenta-900 text-cream-300 hover:text-cream-100 transition-all">
                             Sketsa Font
                         </button>
-                        <button onclick="filterGallery('logo')" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-navy-800 text-softwhite-300 hover:text-softwhite-50 transition-all">
+                        <button onclick="filterGallery('logo')" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-magenta-900 text-cream-300 hover:text-cream-100 transition-all">
                             Logo
                         </button>
-                        <button onclick="filterGallery('poster')" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-navy-800 text-softwhite-300 hover:text-softwhite-50 transition-all">
-                            Poster
-                        </button>
-                        <button onclick="filterGallery('nirmana')" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-navy-800 text-softwhite-300 hover:text-softwhite-50 transition-all">
-                            Nirmana
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Grid Galeri Karya Gambar -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="gallery-grid">
-                    
-                    <!-- 1. SKETSA GAMBAR KEYCHAIN -->
-                    <div class="gallery-card sketsa-gambar group rounded-2xl bg-navy-900 border border-navy-800 overflow-hidden shadow-xl hover:border-softwhite-50/50 transition-all duration-300 flex flex-col justify-between">
-                        <div>
-                            <div class="relative aspect-4/3 bg-navy-950 overflow-hidden cursor-pointer"
-                                 onclick="showWorkDetail('sketsa-gambar')">
-                                <img src="https://simangu.smksalirsyad-hgl.sch.id/apimangu/uploads/siswa/242510008/1787185841_d254679c.jpg" 
-                                     alt="" 
-                                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                                     onerror="this.src='https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=800&q=80'">
-                                <div class="absolute inset-0 bg-navy-950/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                                    <span class="px-4 py-2 rounded-full bg-softwhite-50 text-navy-950 text-xs font-bold">
-                                        <i class="fa-solid fa-circle-info mr-1"></i> Klik Untuk Penjelasan Makna
-                                    </span>
-                                </div>
-                                <div class="absolute top-4 left-4">
-   
+                        <button onclick="filterGallery('poster')" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-magenta-900 text-
+                                            
