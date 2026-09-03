@@ -22,18 +22,18 @@
                     },
                     colors: {
                         magenta: {
-                            950: '#2A0612', // Very Dark Magenta
-                            900: '#4A0820', // Dark Magenta Deep
-                            800: '#700C32', // Rich Magenta
-                            700: '#9B1147', // Main Magenta Accent
-                            600: '#C2185B', // Bright Magenta
-                            500: '#E91E63', // Neon Magenta
+                            950: '#2A0612', // Merah Magenta Sangat Gelap
+                            900: '#4A0820', // Merah Magenta Gelap
+                            800: '#700C32', // Merah Magenta Kaya
+                            700: '#9B1147', // Aksen Utama Magenta
+                            600: '#C2185B', // Magenta Terang
+                            500: '#E91E63', // Magenta Neon
                         },
                         cream: {
                             50: '#FFFFFF',
-                            100: '#FFFDF7', // Soft Cream Light
-                            200: '#F7EBE1', // Soft Warm Cream
-                            300: '#EBD2C1', // Muted Cream
+                            100: '#FFFDF7', // Krim Soft Terang
+                            200: '#F7EBE1', // Krim Soft Hangat
+                            300: '#EBD2C1', // Krim Lembut
                             400: '#DBB6A0',
                         }
                     }
@@ -92,13 +92,13 @@
                 </button>
             </nav>
 
-            <!-- Mobile Menu Button -->
-            <button id="mobile-menu-btn" class="md:hidden text-cream-100 focus:outline-none p-2">
+            <!-- Tombol Menu Seluler -->
+            <button id="mobile-menu-btn" class="md:hidden text-cream-100 focus:outline-none p-2" aria-label="Buka Menu">
                 <i class="fa-solid fa-bars text-xl"></i>
             </button>
         </div>
 
-        <!-- Mobile Menu Dropdown -->
+        <!-- Menu Dropdown Seluler -->
         <div id="mobile-menu" class="hidden md:hidden glass-magenta border-b border-magenta-800 px-6 py-4 space-y-3">
             <button onclick="navigateTo('home'); toggleMobileMenu();" class="block w-full text-left py-2 text-cream-100 font-semibold">Beranda & DKV</button>
             <button onclick="navigateTo('works'); toggleMobileMenu();" class="block w-full text-left py-2 text-cream-300 hover:text-cream-100">Galeri Karya Saya</button>
@@ -114,7 +114,7 @@
         <section id="view-home" class="page-view py-10 lg:py-16">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
-                <!-- Hero Section & Profil Desainer -->
+                <!-- Bagian Utama & Profil Desainer -->
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-16">
                     
                     <!-- Profil Desainer & Foto -->
@@ -153,7 +153,7 @@
                         </div>
                     </div>
 
-                    <!-- Intro Text & Keterangan DKV -->
+                    <!-- Teks Pengenalan & Keterangan DKV -->
                     <div class="lg:col-span-7 order-1 lg:order-2 space-y-6">
                         <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-magenta-900 border border-magenta-700 text-xs font-semibold text-cream-200">
                             <span class="w-2 h-2 rounded-full bg-cream-100 animate-pulse"></span>
@@ -178,7 +178,7 @@
 
                 </div>
 
-                <!-- Bagian Penjelasan Tentang DKV (Sesuai Permintaan) -->
+                <!-- Bagian Penjelasan Tentang DKV -->
                 <div id="tentang-dkv" class="pt-12 border-t border-magenta-800/80">
                     <div class="max-w-3xl mb-10">
                         <span class="text-cream-300 text-xs font-bold uppercase tracking-widest">Pengenalan Jurusan</span>
@@ -238,7 +238,7 @@
                             Galeri Karya Saya
                         </h1>
                         <p class="text-cream-300 text-sm mt-1">
-                            Karya hasil eksplorasi Aji Prastiawan (Kelas XII DKV) lengkap dengan makna dan reaksinya.
+                            Klik pada kartu karya di bawah ini untuk melihat pratinjau penuh beserta penjelasan maknanya.
                         </p>
                     </div>
 
@@ -265,21 +265,21 @@
                     </div>
                 </div>
 
-                <!-- Grid Galeri Karya Dengan Penjelasan Makna -->
+                <!-- Grid Galeri Karya (Setiap Kartu Dapat Diklik) -->
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="gallery-grid">
                     
-                    <!-- 1. LOGO MATAHARI (Sesuai Permintaan Spesifik) -->
-                    <div class="gallery-card logo group rounded-2xl bg-magenta-900/80 border border-magenta-700/60 overflow-hidden shadow-xl hover:border-cream-100/50 transition-all duration-300 flex flex-col justify-between">
+                    <!-- 1. LOGO MATAHARI -->
+                    <div class="gallery-card logo group rounded-2xl bg-magenta-900/80 border border-magenta-700/60 overflow-hidden shadow-xl hover:border-cream-100/80 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between cursor-pointer"
+                         onclick="openModal('https://simangu.smksalirsyad-hgl.sch.id/apimangu/uploads/siswa/242510008/1787185897_8ec651ef.png', 'Desain Logo Matahari', 'Logo', 'Logo ini berbentuk matahari yang memancarkan sinar hangat. Logo ini bermakna kehangatan, kebersamaan, dan keberlanjutan dalam perjalanan sebuah identitas.')">
                         <div>
-                            <div class="relative aspect-4/3 bg-magenta-950 overflow-hidden cursor-pointer"
-                                 onclick="openModal('https://simangu.smksalirsyad-hgl.sch.id/apimangu/uploads/siswa/242510008/1787185897_8ec651ef.png', 'Desain Logo Matahari', 'Logo', 'Logo ini berbentuk matahari yang memancarkan sinar hangat. Logo ini bermakna kehangatan, kebersamaan, dan keberlanjutan dalam perjalanan sebuah identitas.')">
+                            <div class="relative aspect-4/3 bg-magenta-950 overflow-hidden">
                                 <img src="https://simangu.smksalirsyad-hgl.sch.id/apimangu/uploads/siswa/242510008/1787185897_8ec651ef.png" 
-                                     alt="" 
+                                     alt="[Gambar Desain Logo Matahari]" 
                                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                                      onerror="this.src='https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&q=80'">
                                 <div class="absolute inset-0 bg-magenta-950/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                                    <span class="px-4 py-2 rounded-full bg-cream-100 text-magenta-950 text-xs font-bold">
-                                        <i class="fa-solid fa-magnifying-glass-plus mr-1"></i> Lihat Detail Logo
+                                    <span class="px-4 py-2 rounded-full bg-cream-100 text-magenta-950 text-xs font-bold shadow-lg">
+                                        <i class="fa-solid fa-magnifying-glass-plus mr-1"></i> Klik Untuk Detail Logo
                                     </span>
                                 </div>
                                 <div class="absolute top-4 left-4">
@@ -296,5 +296,4 @@
                                     Desain Logo Matahari
                                 </h3>
                                 <div class="mt-3 bg-magenta-950/60 p-3 rounded-xl border border-magenta-800 text-xs text-cream-200/90 leading-relaxed">
-                                    <strong class="text-cream-100 block mb-1">Makna & Penjelasan Logo:</strong>
-                                    "Logo ini berbentuk mata
+                                    <strong class="text-cream-100 block mb-1">Makna & Penje
